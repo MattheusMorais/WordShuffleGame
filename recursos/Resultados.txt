@@ -1,0 +1,6 @@
+Jogador: matheus
+Acertos: 0, Erros: 6
+
+Jogador: 
+Pontua��o Final: 0
+

@@ -1,10 +1,10 @@
-package util;
+package utils;
 
 import java.util.Scanner;
 
-public class Input {
+public class InputHandler {
     /*
-    * Classe Centraliza o Scanner e melhora seu uso nas outras classes.
+    Provides centralized access to Scanner for the entire project
     */
     public static final Scanner SC = new Scanner(System.in);
 
@@ -17,7 +17,7 @@ public class Input {
     public static double nextDouble(String msg) {
         return SC.nextDouble();
     }
-    public static void fechar() {
+    public static void closeScanner() {
         SC.close();
     }
 

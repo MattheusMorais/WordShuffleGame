@@ -1,4 +1,4 @@
-package util;
+package utils;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -24,9 +24,9 @@ public class FileManager {
 		}
 	}
 
-	public static void writeFile(String resultadoFormatado) {
+	public static void writeFile(String formattedResult) {
 		try (BufferedWriter myWriter = new BufferedWriter(new FileWriter("recursos/Resultados.txt", true))) {
-			myWriter.write(resultadoFormatado);
+			myWriter.write(formattedResult);
 			myWriter.newLine();
 			myWriter.newLine();
 

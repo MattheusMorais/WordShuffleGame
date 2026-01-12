@@ -1,22 +1,22 @@
 package app;
 
-import mecanica.FabricaMecanicaDoJogo;
-import mecanica.MecanicaDoJogo;
+import mechanics.GameMechanicFactory;
+import mechanics.GameMechanic;
 
 public class Main {
 
 	static void main() {
 		Menu menu = new Menu();
-		MenuInitialResult menuResult = menu.menuInicial();
+		MenuOptions menuResult = menu.startMenu();
 
-		int dificuldade = menu.menuDificuldade();
+		int difficulty = menu.difficultyMenu();
 
-		MecanicaDoJogo mecanica = FabricaMecanicaDoJogo.criarMecanica();
-		Resultado resultado = mecanica.jogar(menuResult, dificuldade);
+		GameMechanic mechanic = GameMechanicFactory.createMechanic();
+		GameResults gameResults = mechanic.play(menuResult, difficulty);
 
-		String resultadoFormatado = mecanica.formatarResultado(resultado, menuResult);
+		String formattedResult = mechanic.formattedResult(gameResults, menuResult);
 
-		Fim.fimJogo(resultadoFormatado);
+		EndScreen.gameOver(formattedResult);
 
 	}
 }

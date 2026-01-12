@@ -2,18 +2,18 @@ package app;
 
 import java.util.InputMismatchException;
 
-import static util.Input.SC;
+import static utils.InputHandler.SC;
 
 public class Menu {
 
-	public MenuInitialResult menuInicial() { // NÃO PASSAR scanner como parametro
+	public MenuOptions startMenu() { // Do not pass scanner as parameter
 		/**
 		 *
 		 *
 		 */
 
-		int opcao;
-		String nomeJogador = "";
+		int option;
+		String playerName = "";
 
 		while (true) {
 			System.out.println("-------------------- Advinhar Palavras ---------------");
@@ -22,34 +22,33 @@ public class Menu {
 			System.out.println("------------------------------------------------------");
 
 			try {
-				opcao = SC.nextInt();
+				option = SC.nextInt();
 				SC.nextLine();
 			} catch (InputMismatchException e) {
 				System.out.println("Entrada inválida! Por favor, digite um número.");
-				SC.next(); // descarta a entrada inválida
+				SC.next(); // Clear buffer
 				continue;
 			}
 
-			if (opcao == 2) {
+			if (option == 2) {
 				System.out.println("Fechando o jogo...");
-				return new MenuInitialResult(opcao, "");
+				return new MenuOptions(option, "");
 			}
 
 			System.out.println("Digite o nome do Jogador: ");
-			nomeJogador = SC.nextLine();
+			playerName = SC.nextLine();
 
-			switch (opcao) {
+			switch (option) {
 			case 1:
-				return new MenuInitialResult(opcao, nomeJogador);
+				return new MenuOptions(option, playerName);
 			default:
 				System.out.println("Opção Inválida! Digite 1 ou 2.");
-				continue;
 			}
 		}
 	}
 
-	public int menuDificuldade() {
-		int dificuldade;
+	public int difficultyMenu() {
+		int difficulty;
 
 		while (true) {
 			System.out.println("-> Escolha a dificuldade:");
@@ -57,22 +56,21 @@ public class Menu {
 			System.out.println("2. Difícil");
 
 			try {
-				dificuldade = SC.nextInt();
+				difficulty = SC.nextInt();
 			} catch (InputMismatchException e) {
 				System.out.println("Entrada inválida! Por favor, digite um número.");
-				SC.next(); // descarta a entrada inválida
+				SC.next(); // Clear buffer
 				continue;
 			}
-			SC.nextLine(); // Consome o enter do buffer
+			SC.nextLine(); // Clear buffer
 
-			switch (dificuldade) {
+			switch (difficulty) {
 			case 1:
 			case 2:
-				System.out.printf("Dificuldade %s escolhida!", dificuldade);
-				return dificuldade;
+				System.out.printf("Dificuldade %s escolhida!", difficulty);
+				return difficulty;
 			default:
 				System.out.println("Opção Inválida! Digite 1 ou 2.");
-				continue;
 			}
 		}
 	}

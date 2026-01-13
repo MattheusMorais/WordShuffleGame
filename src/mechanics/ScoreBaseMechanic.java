@@ -1,6 +1,5 @@
 package mechanics;
 
-import app.MenuOptions;
 import app.GameResults;
 
 public class ScoreBaseMechanic extends BaseMechanic {
@@ -17,7 +16,7 @@ public class ScoreBaseMechanic extends BaseMechanic {
 	}
 
 	@Override
-	public String formattedResult(GameResults gameResults, MenuOptions playerName) {
-		return "Jogador: " + playerName.getPlayerName() + "\n" + "Pontuação Final: " + gameResults.scoreResult();
+	public String formattedResult(GameResults gameResults, String PLAYERNAME) {
+		return "Jogador: " + PLAYERNAME + "\n" + "Pontuação Final: " + gameResults.scoreResult();
 	}
 }

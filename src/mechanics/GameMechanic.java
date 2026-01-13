@@ -1,9 +1,9 @@
 package mechanics;
 
-import app.MenuOptions;
+import app.MenuSettings;
 import app.GameResults;
 
 public interface GameMechanic {
-	GameResults play(MenuOptions option, int difficulty);
-	String formattedResult(GameResults gameResults, MenuOptions playerName);
+	GameResults play(MenuSettings settings);
+	String formattedResult(GameResults gameResults, String PLAYERNAME);
 }

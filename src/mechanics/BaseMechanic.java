@@ -1,34 +1,28 @@
 package mechanics;
 
-import app.MenuOptions;
 import app.GameResults;
+import app.MenuSettings;
 import bank.WordBank;
 import shufflers.Shuffler;
 import shufflers.ShufflerFactory;
 import static utils.InputHandler.SC;
 
 public abstract class BaseMechanic implements GameMechanic {
-	protected int difficulty;
 	int hits = 0;
 	int misses = 0;
 
 	@Override
-	public GameResults play(final MenuOptions option, final int difficulty) {
+	public GameResults play(final MenuSettings settings) {
 		WordBank bank = new WordBank();
-
 		GameResults currentGameResults = new GameResults();
-		MenuOptions startMenu = option;
 
 		System.out.println("*** OBS: Digite 0 a qualquer momento para Finalizar o Jogo. ***");
 		while (true) {
-			if (startMenu.getOption() != 1) {
+			if (settings.getOPTION() != 1) {
 				break;
 			}
-
 			String originalWord = bank.returnWord();
-			Shuffler shuffler;
-			shuffler = ShufflerFactory.createShuffler(difficulty);
-
+			Shuffler shuffler = ShufflerFactory.createShuffler(settings);
 
 			String scrambledWord = shuffler.shuffler(originalWord);
 			System.out.println("Palavra embaralhada: " + scrambledWord);

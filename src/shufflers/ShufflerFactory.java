@@ -1,12 +1,11 @@
 package shufflers;
 
-import app.Menu;
+import app.MenuSettings;
 
 public class ShufflerFactory {
 
-	public static Shuffler createShuffler() {
-		Menu difficulty = new Menu();
-        return switch (difficulty.getDifficulty()) { // Difficulty does not change during the game, getDifficulty is better than passing parameters
+	public static Shuffler createShuffler(MenuSettings settings) {
+        return switch (settings.getDIFFICULTY()) {
             case 1 -> new ReverseShuffler();
             case 2 -> new PermutationShuffler();
             default -> new ReverseShuffler();

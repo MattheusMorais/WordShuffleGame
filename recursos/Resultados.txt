@@ -7,3 +7,6 @@ Pontua��o Final: 0
 Jogador: 
 Acertos: 0, Erros: 0
 
+Jogador: null
+Pontuação Final: 0
+

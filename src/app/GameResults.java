@@ -1,10 +1,12 @@
 package app;
 
+import utils.FileManager;
+
 public class GameResults {
 	private int hits;
 	private int misses;
-	private int hitsScore = 200;
-	private int missesScore = -100;
+	private final int HITSCORE = 200;
+	private final int MISSESCORE = -100;
 
 	public GameResults() {
 		this.hits = 0;
@@ -16,20 +18,19 @@ public class GameResults {
 		this.misses = misses;
 	}
 
+	public static void gameOver(String formattedResult) {
+		System.out.println("Resultado do jogo: ");
+		FileManager.createFile();
+		FileManager.writeFile(formattedResult);
+		FileManager.readFile();
+	}
+
 	public int getHits() {
 		return hits;
 	}
 
-	public void setHits(int hits) {
-		this.hits = hits;
-	}
-
 	public int getMisses() {
 		return misses;
-	}
-
-	public void setErros(int misses) {
-		this.misses = misses;
 	}
 
 	public void incrementHits(int hits) {
@@ -41,6 +42,6 @@ public class GameResults {
 	}
 
 	public int scoreResult() {
-		return (hitsScore * hits) + (missesScore * misses);
+		return (HITSCORE * hits) + (MISSESCORE * misses);
 	}
 }

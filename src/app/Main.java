@@ -6,17 +6,19 @@ import mechanics.GameMechanic;
 public class Main {
 
 	static void main() {
-		Menu menu = new Menu();
-		MenuOptions menuResult = menu.startMenu();
+		MenuUI menuUI = new MenuUI();
+		menuUI.showStartMenu();
 
-		int difficulty = menu.difficultyMenu();
+		menuUI.showDifficultyMenu();
 
 		GameMechanic mechanic = GameMechanicFactory.createMechanic();
-		GameResults gameResults = mechanic.play(menuResult, difficulty);
 
-		String formattedResult = mechanic.formattedResult(gameResults, menuResult);
+		MenuSettings settings = new MenuSettings();
+		GameResults gameResults = mechanic.play(settings);
 
-		EndScreen.gameOver(formattedResult);
+		String formattedResult = mechanic.formattedResult(gameResults, settings.getPLAYERNAME());
+
+		GameResults.gameOver(formattedResult);
 
 	}
 }

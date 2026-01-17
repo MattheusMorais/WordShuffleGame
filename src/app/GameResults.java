@@ -19,7 +19,7 @@ public class GameResults {
 	}
 
 	public static void gameOver(String formattedResult) {
-		System.out.println("Resultado do jogo: ");
+		System.out.println("Resultado do jogo: "); // USAR toString();
 		FileManager.createFile();
 		FileManager.writeFile(formattedResult);
 		FileManager.readFile();

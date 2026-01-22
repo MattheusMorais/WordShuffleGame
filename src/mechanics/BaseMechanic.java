@@ -18,9 +18,6 @@ public abstract class BaseMechanic implements GameMechanic {
 
 		System.out.println("*** OBS: Digite 0 a qualquer momento para Finalizar o Jogo. ***");
 		while (true) {
-			if (settings.getOPTION() != 1) {
-				break;
-			}
 			String originalWord = bank.returnWord();
 			Shuffler shuffler = ShufflerFactory.createShuffler(settings);
 
@@ -28,12 +25,12 @@ public abstract class BaseMechanic implements GameMechanic {
 			System.out.println("Palavra embaralhada: " + scrambledWord);
 			System.out.println("Advinhe a palavra: ");
 
-			String input = SC.nextLine();
-			if (input.equals("0")) {
+			String guess = SC.nextLine();
+			if (guess.equals("0")) {
 				break;
 			}
 
-			GameResults partialGameResult = processAnswer(input, originalWord);
+			GameResults partialGameResult = processAnswer(guess, originalWord);
 			currentGameResults.incrementHits(partialGameResult.getHits());
 			currentGameResults.incrementMisses(partialGameResult.getMisses());
 		}

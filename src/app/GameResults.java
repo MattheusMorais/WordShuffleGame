@@ -18,24 +18,15 @@ public class GameResults {
 		this.misses = misses;
 	}
 
-	public static void gameOver(String formattedResult) {
-		System.out.println("Resultado do jogo: "); // USAR toString();
-		FileManager.createFile();
-		FileManager.writeFile(formattedResult);
-		FileManager.readFile();
-	}
-
 	public int getHits() {
 		return hits;
-	}
-
-	public int getMisses() {
-		return misses;
 	}
 
 	public void incrementHits(int hits) {
 		this.hits += hits;
 	}
+
+	public int getMisses() { return misses; }
 
 	public void incrementMisses(int misses) {
 		this.misses += misses;
@@ -43,5 +34,12 @@ public class GameResults {
 
 	public int scoreResult() {
 		return (HITSCORE * hits) + (MISSESCORE * misses);
+	}
+
+	public static void gameOver(String formattedResult) {
+		System.out.println("Resultado do jogo: "); // USAR toString();
+		FileManager.createFile();
+		FileManager.writeFile(formattedResult);
+		FileManager.readFile();
 	}
 }

@@ -17,6 +17,6 @@ public class ErrorBaseMechanic extends BaseMechanic {
 
 	@Override
 	public String formattedResult(GameResults gameResults, String PLAYERNAME) {
-		return "Jogador: " + "\n" + "Acertos: " + gameResults.getHits() + ", Erros: " + gameResults.getMisses();
+		return "Jogador: " + PLAYERNAME + "\n" + "Acertos: " + gameResults.getHits() + ", Erros: " + gameResults.getMisses();
 	}
 }

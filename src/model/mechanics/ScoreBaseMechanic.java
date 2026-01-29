@@ -1,6 +1,6 @@
-package mechanics;
+package model.mechanics;
 
-import app.GameResults;
+import controller.GameResults;
 
 public class ScoreBaseMechanic extends BaseMechanic {
 	GameResults score = new GameResults();

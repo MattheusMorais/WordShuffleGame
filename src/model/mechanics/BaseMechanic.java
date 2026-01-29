@@ -1,11 +1,11 @@
-package mechanics;
+package model.mechanics;
 
-import app.GameResults;
-import app.MenuSettings;
-import bank.WordBank;
-import shufflers.Shuffler;
-import shufflers.ShufflerFactory;
-import static utils.InputHandler.SC;
+import controller.GameResults;
+import controller.MenuSettings;
+import model.bank.WordBank;
+import model.shufflers.Shuffler;
+import model.shufflers.ShufflerFactory;
+import static controller.InputHandler.SC;
 
 public abstract class BaseMechanic implements GameMechanic {
 	int hits = 0;

@@ -1,4 +1,4 @@
-package shufflers;
+package model.shufflers;
 
 import java.util.Random;
 

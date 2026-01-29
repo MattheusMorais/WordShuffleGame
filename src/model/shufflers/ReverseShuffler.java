@@ -1,4 +1,4 @@
-package shufflers;
+package model.shufflers;
 
 public class ReverseShuffler implements Shuffler {
 

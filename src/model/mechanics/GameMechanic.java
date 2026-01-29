@@ -1,7 +1,7 @@
-package mechanics;
+package model.mechanics;
 
-import app.MenuSettings;
-import app.GameResults;
+import controller.MenuSettings;
+import controller.GameResults;
 
 public interface GameMechanic {
 	GameResults play(MenuSettings settings);

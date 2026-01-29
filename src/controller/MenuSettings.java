@@ -1,4 +1,4 @@
-package app;
+package controller;
 
 public class MenuSettings {
     private int OPTION;

@@ -1,14 +1,14 @@
 package model.bank;
 
+import controller.RandomHandler;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
 public class WordBank {
-	private List<String> wordList = new ArrayList<String>(); // Using the List interface allows flexibility to change the implementation later
-	private Random random = new Random();
+	private final List<String> wordList = new ArrayList<>();
 
-	public WordBank() { // Constructor that automatically calls two methods when the object is instantiated
+	public WordBank() {
 		bankInitializer();
 		bankToLowerCase();
 	}
@@ -45,7 +45,7 @@ public class WordBank {
 	}
 
 	public String returnWord() {
-		int index = random.nextInt(wordList.size());
+		int index = RandomHandler.nextInt(wordList.size());
 		return wordList.get(index);
 	}
 }

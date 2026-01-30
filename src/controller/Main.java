@@ -4,8 +4,6 @@ import model.mechanics.GameMechanicFactory;
 import model.mechanics.GameMechanic;
 import view.MenuUI;
 
-import static controller.InputHandler.SC;
-
 public class Main {
 
 	static void main() {
@@ -14,10 +12,10 @@ public class Main {
 
 		menuUI.showStartMenu();
 
-		int menuSettingsOption = SC.nextInt();
+		int menuSettingsOption = InputHandler.nextInt();
 		while (menuSettingsOption != 1 && menuSettingsOption != 2) {
 			System.out.println("Opção Inválida! Digite 1 ou 2.");
-			menuSettingsOption = SC.nextInt();;
+			menuSettingsOption = InputHandler.nextInt();
 		}
 		if (menuSettingsOption == 2) {
 			System.out.println("Fechando o jogo...");
@@ -26,20 +24,20 @@ public class Main {
 			menuSettings.setOPTION(menuSettingsOption);
 		}
 
-		SC.nextLine();
+		InputHandler.nextLine();
 		if  (menuSettingsOption == 1) {
 			System.out.println("Digite o nome do jogador: ");
-			String PLAYERNAME = SC.nextLine();
+			String PLAYERNAME = InputHandler.nextLine();
 			menuSettings.setPLAYERNAME(PLAYERNAME);
 		}
 
 		menuUI.showDifficultyMenu();
-		int difficultyOption = SC.nextInt();
+		int difficultyOption = InputHandler.nextInt();
 		while (difficultyOption != 1 && difficultyOption != 2) {
 			System.out.println("Opção Inválida! Digite 1 ou 2.");
-			difficultyOption = SC.nextInt();
+			difficultyOption = InputHandler.nextInt();
 		}
-		SC.nextLine();
+		InputHandler.nextLine();
 		menuSettings.setDIFFICULTY(difficultyOption);
 
 		GameMechanic mechanic = GameMechanicFactory.createMechanic();
@@ -49,5 +47,6 @@ public class Main {
 		String formattedResult = mechanic.formattedResult(gameResults, PLAYERNAME);
 		GameResults.gameOver(formattedResult);
 
+		InputHandler.closeScanner();
 	}
 }

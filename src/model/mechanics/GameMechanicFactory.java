@@ -1,13 +1,12 @@
 package model.mechanics;
 
-import java.util.Random;
+import controller.RandomHandler;
 
 public class GameMechanicFactory {
 
 	public static GameMechanic createMechanic() {
-		Random random = new Random();
 
-		if (random.nextBoolean()) {
+		if (RandomHandler.nextBoolean()) {
 			return new ErrorBaseMechanic();
 		} else {
 			return new ScoreBaseMechanic();

@@ -3,19 +3,23 @@ package controller;
 import java.util.Scanner;
 
 public class InputHandler {
+    private static final Scanner SC = new Scanner(System.in);
+
     /*
     Provides centralized access to Scanner for the entire project
     */
-    public static final Scanner SC = new Scanner(System.in);
 
-    public static int nextInt(String msg) {
+    public static int nextInt() {
         return SC.nextInt();
     }
-    public static String next(String msg) {
+    public static double nextDouble() {
+        return SC.nextDouble();
+    }
+    public static String next() {
         return SC.next();
     }
-    public static double nextDouble(String msg) {
-        return SC.nextDouble();
+    public static String nextLine() {
+        return SC.nextLine();
     }
     public static void closeScanner() {
         SC.close();

@@ -1,15 +1,15 @@
 package model.mechanics;
 
 import controller.GameResults;
+import controller.InputHandler;
 import controller.MenuSettings;
 import model.bank.WordBank;
 import model.shufflers.Shuffler;
 import model.shufflers.ShufflerFactory;
-import static controller.InputHandler.SC;
 
 public abstract class BaseMechanic implements GameMechanic {
-	int hits = 0;
-	int misses = 0;
+	protected int hits = 0;
+	protected int misses = 0;
 
 	@Override
 	public GameResults play(final MenuSettings settings) {
@@ -25,7 +25,7 @@ public abstract class BaseMechanic implements GameMechanic {
 			System.out.println("Palavra embaralhada: " + scrambledWord);
 			System.out.println("Advinhe a palavra: ");
 
-			String guess = SC.nextLine();
+			String guess = InputHandler.nextLine();
 			if (guess.equals("0")) {
 				break;
 			}

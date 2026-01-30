@@ -1,52 +1,84 @@
 package controller;
 
+import controller.exceptions.ValidationException;
 import model.mechanics.GameMechanicFactory;
 import model.mechanics.GameMechanic;
 import view.MenuUI;
 
+import java.util.InputMismatchException;
+
 public class Main {
 
-	static void main() {
+	public static void main(String[] args) {
+		boolean running = true;
 		MenuUI menuUI = new MenuUI();
-		MenuSettings menuSettings = new MenuSettings();
 
-		menuUI.showStartMenu();
+		while (running) {
+			menuUI.showStartMenu();
 
-		int menuSettingsOption = InputHandler.nextInt();
-		while (menuSettingsOption != 1 && menuSettingsOption != 2) {
-			System.out.println("Opção Inválida! Digite 1 ou 2.");
-			menuSettingsOption = InputHandler.nextInt();
+			int mainOption;
+			try {
+				mainOption = InputHandler.nextInt();
+				InputHandler.nextLine();
+				MenuSettings.isOptionValid(mainOption);
+
+			} catch (InputMismatchException e) {
+				System.out.println("Erro: Digite um número válido.");
+				InputHandler.nextLine();
+				continue;
+			} catch (ValidationException e) {
+				System.out.println(e.getMessage());
+				continue;
+			}
+
+			if (mainOption == 2) {
+				System.out.println("Fechando o jogo...");
+				running = false;
+				continue;
+			}
+
+			String playerName;
+			while (true) {
+
+				try {
+					System.out.println("Digite o nome do jogador: ");
+					playerName = InputHandler.nextLine();
+					MenuSettings.isPlayerNameValid(playerName);
+					break;
+				} catch (ValidationException e) {
+					System.out.println(e.getMessage());
+					System.out.println("Por favor, tente novamente.");
+				}
+			}
+
+			int difficultyOption;
+			while (true) {
+				menuUI.showDifficultyMenu();
+
+				try {
+					difficultyOption = InputHandler.nextInt();
+					InputHandler.nextLine();
+					MenuSettings.isDifficultyValid(difficultyOption);
+					break;
+				} catch (InputMismatchException e1) {
+					InputHandler.nextLine();
+					System.out.println("Por favor, tente novamente.");
+				} catch (ValidationException e1) {
+					System.out.println(e1.getMessage());
+					System.out.println("Por favor, tente novamente.");
+				}
+			}
+
+			MenuSettings menuSettings = new MenuSettings(mainOption, playerName, difficultyOption);
+
+			GameMechanic mechanic = GameMechanicFactory.createMechanic();
+			GameResults gameResults = mechanic.play(menuSettings);
+
+			String formattedResult = mechanic.formattedResult(gameResults, playerName);
+			GameResults.gameOver(formattedResult);
+
 		}
-		if (menuSettingsOption == 2) {
-			System.out.println("Fechando o jogo...");
-			return;
-		} else {
-			menuSettings.setOPTION(menuSettingsOption);
-		}
-
-		InputHandler.nextLine();
-		if  (menuSettingsOption == 1) {
-			System.out.println("Digite o nome do jogador: ");
-			String PLAYERNAME = InputHandler.nextLine();
-			menuSettings.setPLAYERNAME(PLAYERNAME);
-		}
-
-		menuUI.showDifficultyMenu();
-		int difficultyOption = InputHandler.nextInt();
-		while (difficultyOption != 1 && difficultyOption != 2) {
-			System.out.println("Opção Inválida! Digite 1 ou 2.");
-			difficultyOption = InputHandler.nextInt();
-		}
-		InputHandler.nextLine();
-		menuSettings.setDIFFICULTY(difficultyOption);
-
-		GameMechanic mechanic = GameMechanicFactory.createMechanic();
-		GameResults gameResults = mechanic.play(menuSettings);
-
-		String PLAYERNAME = menuSettings.getPLAYERNAME();
-		String formattedResult = mechanic.formattedResult(gameResults, PLAYERNAME);
-		GameResults.gameOver(formattedResult);
-
 		InputHandler.closeScanner();
+
 	}
 }

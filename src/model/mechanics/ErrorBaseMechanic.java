@@ -1,28 +1,21 @@
 package model.mechanics;
 
 import controller.GameResults;
-
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
+import controller.LocalDateTimeHandler;
 
 public class ErrorBaseMechanic extends BaseMechanic {
     
 	@Override
-	protected GameResults processAnswer(String input, String originalWord) {
-
+	public final void processAnswer(String input, String originalWord) {
 		if (input.equals(originalWord)) {
-			hits++;
+            currentGameResults.incrementHits(1);
 		} else {
-			misses++;
+			currentGameResults.incrementMisses(1);
 		}
-		return new GameResults(hits, misses);
 	}
 
 	@Override
-	public String formattedResult(GameResults gameResults, String PLAYERNAME) {
-		LocalDateTime now = LocalDateTime.now();
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
-
-		return now.format(formatter) + "\n" + "Jogador: " + PLAYERNAME + "\n" + "Acertos: " + gameResults.getHits() + ", Erros: " + gameResults.getMisses();
+	public final String formattedResult(GameResults gameResults, String PLAYERNAME) {
+		return LocalDateTimeHandler.getNow() + "\n" + "Jogador: " + PLAYERNAME + "\n" + "Acertos: " + gameResults.getHits() + ", Erros: " + gameResults.getMisses();
 	}
 }

@@ -60,5 +60,4 @@ public class FileManager {
             throw new RuntimeException("Erro ao ler do arquivo: " + e.getMessage());
         }
     }
-
 }

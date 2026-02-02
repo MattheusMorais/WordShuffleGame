@@ -8,13 +8,11 @@ import model.shufflers.Shuffler;
 import model.shufflers.ShufflerFactory;
 
 public abstract class BaseMechanic implements GameMechanic {
-	protected int hits = 0;
-	protected int misses = 0;
+	GameResults currentGameResults = new GameResults();
 
 	@Override
 	public GameResults play(final MenuSettings settings) {
 		WordBank bank = new WordBank();
-		GameResults currentGameResults = new GameResults();
 
 		System.out.println("*** OBS: Digite 0 a qualquer momento para Finalizar o Jogo. ***");
 		while (true) {
@@ -30,11 +28,11 @@ public abstract class BaseMechanic implements GameMechanic {
 				break;
 			}
 
-			GameResults partialGameResult = processAnswer(guess, originalWord);
-			currentGameResults.incrementHits(partialGameResult.getHits());
-			currentGameResults.incrementMisses(partialGameResult.getMisses());
+			processAnswer(guess, originalWord);
+
 		}
 		return currentGameResults;
 	}
-	protected abstract GameResults processAnswer(String input, String originalWord);
+	protected abstract void processAnswer(String input, String originalWord);
+
 }

@@ -24,5 +24,4 @@ public class InputHandler {
     public static void closeScanner() {
         SC.close();
     }
-
 }

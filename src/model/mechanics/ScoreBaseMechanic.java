@@ -2,6 +2,9 @@ package model.mechanics;
 
 import controller.GameResults;
 
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+
 public class ScoreBaseMechanic extends BaseMechanic {
 	GameResults score = new GameResults();
 
@@ -17,6 +20,9 @@ public class ScoreBaseMechanic extends BaseMechanic {
 
 	@Override
 	public String formattedResult(GameResults gameResults, String PLAYERNAME) {
-		return "Jogador: " + PLAYERNAME + "\n" + "Pontuação Final: " + gameResults.scoreResult();
+		LocalDateTime now = LocalDateTime.now();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss");
+
+		return now.format(formatter) + "\n" + "Jogador: " + PLAYERNAME + "\n" + "Pontuação Final: " + gameResults.scoreResult();
 	}
 }

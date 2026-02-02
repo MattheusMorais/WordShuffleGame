@@ -1,51 +1,64 @@
 package utils;
 
-import java.io.BufferedReader;
-import java.io.BufferedWriter;
-import java.io.File;
-import java.io.FileReader;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class FileManager {
+	private static final File results = new File("resources/Scores/results.txt");
+	private static final File words = new File("resources/WordBank/animals.txt");
 
-	public static void createFile() {
-		try {
-			File myObj = new File("recursos/Resultados.txt");
-			if (myObj.createNewFile()) {
-				System.out.println("Arquivo criado: " + myObj.getName());
-			} else {
-				System.out.println("Arquivo já existente: " + myObj.getName());
+	public static void createResultsFile() {
+
+        try {
+			if (!results.getParentFile().exists()) {
+				results.getParentFile().mkdirs();
 			}
 
-		} catch (IOException e) {
-			System.out.println("An Error occurred");
-			e.printStackTrace();
-		}
-	}
+			if (!results.exists()) {
+				results.createNewFile();
+			}
+        } catch (IOException e) {
+            throw new RuntimeException("Erro ao criar o arquivo: " + e.getMessage());
+        }
+    }
 
-	public static void writeFile(String formattedResult) {
-		try (BufferedWriter myWriter = new BufferedWriter(new FileWriter("recursos/Resultados.txt", true))) {
-			myWriter.write(formattedResult);
-			myWriter.newLine();
-			myWriter.newLine();
-
-		} catch (IOException e) {
-			System.out.println("An error occurred");
-			e.printStackTrace();
-		}
-	}
-
-	public static void readFile() {
-		try (BufferedReader myReader = new BufferedReader(new FileReader("recursos/Resultados.txt"))) {
-			String line;
-			while ((line = myReader.readLine()) != null) {
+	public static void readResults() {
+		try (BufferedReader myReader = new BufferedReader(new FileReader(results))){
+			String line = myReader.readLine();
+			while (line != null) {
 				System.out.println(line);
+				line = myReader.readLine();
 			}
-
 		} catch (IOException e) {
-			System.out.println("An error occurred");
-			e.printStackTrace();
-		}
-	}
+            throw new RuntimeException("Erro ao ler do arquivo: " + e.getMessage());
+        }
+    }
+
+	public static void writeResults(String formattedResult) {
+		try (BufferedWriter myWriter = new BufferedWriter(new FileWriter(results,true))) {
+			for (String line: formattedResult.split("\n")) {
+				myWriter.write(line);
+				myWriter.newLine();
+			}
+			myWriter.newLine();
+        } catch (IOException e) {
+            throw new RuntimeException("Erro ao escrever no arquivo: " + e.getMessage());
+        }
+    }
+
+	public static List<String> readWordBank() {
+		try (BufferedReader myWords = new BufferedReader(new FileReader(words))) {
+			List<String> wordList = new ArrayList<>();
+
+			String word = "";
+			while((word = myWords.readLine()) != null) {
+				wordList.add(word.trim().toLowerCase());
+			}
+			return wordList;
+		} catch (IOException e) {
+            throw new RuntimeException("Erro ao ler do arquivo: " + e.getMessage());
+        }
+    }
+
 }

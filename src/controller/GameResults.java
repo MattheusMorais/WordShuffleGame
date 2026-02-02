@@ -38,8 +38,8 @@ public class GameResults {
 
 	public static void gameOver(String formattedResult) {
 		System.out.println("Resultado do jogo: "); // USAR toString();
-		FileManager.createFile();
-		FileManager.writeFile(formattedResult);
-		FileManager.readFile();
+		FileManager.createResultsFile();
+		FileManager.writeResults(formattedResult);
+		FileManager.readResults();
 	}
 }

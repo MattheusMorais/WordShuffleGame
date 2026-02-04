@@ -1,6 +1,6 @@
-package model.shufflers;
+package model.game.shufflers;
 
-import controller.MenuSettings;
+import model.game.settings.MenuSettings;
 
 public class ShufflerFactory {
 

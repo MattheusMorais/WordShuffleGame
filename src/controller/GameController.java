@@ -1,9 +1,11 @@
 package controller;
 
-import controller.exceptions.ValidationException;
-import controller.handlers.InputHandler;
-import model.mechanics.GameMechanic;
-import model.mechanics.GameMechanicFactory;
+import model.exceptions.ValidationException;
+import model.game.results.GameResults;
+import model.game.settings.MenuSettings;
+import utils.handlers.InputHandler;
+import model.game.mechanics.GameMechanic;
+import model.game.mechanics.GameMechanicFactory;
 import view.GameOverUI;
 import view.MenuUI;
 

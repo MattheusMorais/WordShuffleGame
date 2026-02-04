@@ -1,6 +1,6 @@
-package model.shufflers;
+package model.game.shufflers;
 
-import controller.handlers.RandomHandler;
+import utils.handlers.RandomHandler;
 
 public class PermutationShuffler implements Shuffler {
 

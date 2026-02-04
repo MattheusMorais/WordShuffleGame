@@ -1,11 +1,11 @@
-package model.mechanics;
+package model.game.mechanics;
 
-import controller.GameResults;
-import controller.MenuSettings;
-import controller.handlers.InputHandler;
-import model.bank.WordBank;
-import model.shufflers.Shuffler;
-import model.shufflers.ShufflerFactory;
+import model.game.results.GameResults;
+import model.game.settings.MenuSettings;
+import utils.handlers.InputHandler;
+import model.words.WordBank;
+import model.game.shufflers.Shuffler;
+import model.game.shufflers.ShufflerFactory;
 
 public abstract class BaseMechanic implements GameMechanic {
 	GameResults currentGameResults = new GameResults();

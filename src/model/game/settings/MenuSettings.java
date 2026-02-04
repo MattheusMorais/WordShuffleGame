@@ -1,6 +1,6 @@
-package controller;
+package model.game.settings;
 
-import controller.exceptions.ValidationException;
+import model.exceptions.ValidationException;
 
 public class MenuSettings {
     private final int OPTION;

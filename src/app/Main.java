@@ -1,6 +1,7 @@
-package controller;
+package app;
 
-import controller.handlers.InputHandler;
+import controller.GameController;
+import utils.handlers.InputHandler;
 
 public class Main {
 

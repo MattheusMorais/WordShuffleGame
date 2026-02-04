@@ -1,6 +1,6 @@
-package model.mechanics;
+package model.game.mechanics;
 
-import controller.handlers.RandomHandler;
+import utils.handlers.RandomHandler;
 
 public class GameMechanicFactory {
 

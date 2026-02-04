@@ -1,4 +1,4 @@
-package model.shufflers;
+package model.game.shufflers;
 
 public class ReverseShuffler implements Shuffler {
 

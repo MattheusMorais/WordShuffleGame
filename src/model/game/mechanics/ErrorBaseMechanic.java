@@ -1,7 +1,7 @@
-package model.mechanics;
+package model.game.mechanics;
 
-import controller.GameResults;
-import controller.handlers.LocalDateTimeHandler;
+import model.game.results.GameResults;
+import utils.handlers.LocalDateTimeHandler;
 
 public class ErrorBaseMechanic extends BaseMechanic {
     

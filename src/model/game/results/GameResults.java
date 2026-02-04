@@ -1,4 +1,4 @@
-package controller;
+package model.game.results;
 
 public class GameResults {
 	private int hits;

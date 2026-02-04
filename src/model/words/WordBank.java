@@ -1,6 +1,6 @@
-package model.bank;
+package model.words;
 
-import controller.handlers.RandomHandler;
+import utils.handlers.RandomHandler;
 import utils.FileManager;
 import java.util.List;
 

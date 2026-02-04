@@ -1,8 +1,8 @@
 package model.mechanics;
 
 import controller.GameResults;
-import controller.InputHandler;
 import controller.MenuSettings;
+import controller.handlers.InputHandler;
 import model.bank.WordBank;
 import model.shufflers.Shuffler;
 import model.shufflers.ShufflerFactory;

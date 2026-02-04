@@ -1,7 +1,7 @@
 package model.mechanics;
 
 import controller.GameResults;
-import controller.LocalDateTimeHandler;
+import controller.handlers.LocalDateTimeHandler;
 
 public class ScoreBaseMechanic extends BaseMechanic {
 

@@ -1,7 +1,5 @@
 package controller;
 
-import utils.FileManager;
-
 public class GameResults {
 	private int hits;
 	private int misses;
@@ -36,10 +34,4 @@ public class GameResults {
 		return (HITSCORE * hits) + (MISSESCORE * misses);
 	}
 
-	public static void gameOver(String formattedResult) {
-		System.out.println("Resultado do jogo: "); // USAR toString();
-		FileManager.createResultsFile();
-		FileManager.writeResults(formattedResult);
-		FileManager.readResults();
-	}
 }

@@ -1,6 +1,6 @@
 package model.bank;
 
-import controller.RandomHandler;
+import controller.handlers.RandomHandler;
 import utils.FileManager;
 import java.util.List;
 

@@ -1,4 +1,4 @@
-package controller;
+package controller.handlers;
 
 import java.util.Random;
 

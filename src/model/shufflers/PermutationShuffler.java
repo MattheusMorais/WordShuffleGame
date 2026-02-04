@@ -1,6 +1,6 @@
 package model.shufflers;
 
-import controller.RandomHandler;
+import controller.handlers.RandomHandler;
 
 public class PermutationShuffler implements Shuffler {
 

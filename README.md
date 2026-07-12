@@ -119,8 +119,6 @@ Os testes garantem o comportamento correto e o tratamento adequado de exceções
 * Git
     - Windows/Linux/Mac: https://git-scm.com/install/
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
-
 ### ⚙️ Executando o Projeto
 
 💡 Execute os comandos **em negrito** no terminal em sequência (pode copiar e colar).
@@ -133,8 +131,6 @@ Os testes garantem o comportamento correto e o tratamento adequado de exceções
    **docker compose up -d db**
 4. Execute a aplicação:  
    **docker compose run --rm app**
-
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 <!-- USAGE EXAMPLES -->
 ## 💻 Uso
@@ -155,8 +151,6 @@ Cada interação percorre as camadas do sistema, simulando cenários reais de pr
     <img src="https://github.com/MattheusMorais/word-processing-service/blob/main/images/usage.png?raw=true" alt="Logo" width="50%" height="50%">
 </div>
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
-
 <!-- ROADMAP -->
 ## 🚧 Roadmap
 
@@ -164,14 +158,10 @@ Cada interação percorre as camadas do sistema, simulando cenários reais de pr
 - [ ] Substituir DAO por Spring Data JPA
 - [ ] Implementar endpoints REST
 
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
-
 <!-- LICENSE -->
 ## 📄 Licença
 
 Distribuído sob a licença MIT. Veja `LICENSE.txt` para mais informações.
-
-<p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 
 <!-- CONTACT -->
 ## 🤝 Contato

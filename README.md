@@ -121,16 +121,23 @@ Os testes garantem o comportamento correto e o tratamento adequado de exceções
 
 ### ⚙️ Executando o Projeto
 
-💡 Execute os comandos **em negrito** no terminal em sequência (pode copiar e colar).
+Clone o projeto
+```bash
+git clone https://github.com/MattheusMorais/word-processing-service.git
+```
+Entre na pasta
+```bash
+cd word-processing-service
+```
 
-1. Abra um terminal e execute:  
-   **git clone https://github.com/MattheusMorais/word-processing-service.git**
-2. Navegue até a pasta:  
-   **cd word-processing-service**
-3. Inicie o banco de dados:  
-   **docker compose up -d db**
-4. Execute a aplicação:  
-   **docker compose run --rm app**
+Inicie o banco de dados
+```bash
+docker compose up -d db
+```
+Execute a aplicação
+```bash
+docker compose run --rm app
+```
 
 <!-- USAGE EXAMPLES -->
 ## 💻 Uso
@@ -166,11 +173,17 @@ Distribuído sob a licença MIT. Veja `LICENSE.txt` para mais informações.
 <!-- CONTACT -->
 ## 🤝 Contato
 
-Matheus Morais  
-LinkedIn: https://www.linkedin.com/in/mattheus-morais/  
-Email: moraism.dev@gmail.com
+LinkedIn:
+https://www.linkedin.com/in/mattheus-morais/
 
-Link do Projeto: https://github.com/MattheusMorais/word-processing-service
+Email:
+moraism.dev@gmail.com
+
+Projeto:
+https://github.com/MattheusMorais/word-processing-service
+
+Site:
+https://matheus-morais.vercel.app
 
 <p align="right">(<a href="#readme-top">voltar ao topo</a>)</p>
 

@@ -120,11 +120,6 @@ The tests ensure correct behavior and proper exception handling for invalid inpu
 * Git
     - Windows/Linux/Mac: https://git-scm.com/install/
 
-
-  <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 ### ⚙️ Running the Project
 
 💡 Run the following **bold** commands in your terminal in sequence(you can copy and paste them).
@@ -133,9 +128,6 @@ The tests ensure correct behavior and proper exception handling for invalid inpu
 2. Navigate to the project folder: **cd word-processing-service**
 3. Start container database: **docker compose up -d db**
 4. Run the application: **docker compose run --rm app**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- USAGE EXAMPLES -->
 ## 💻 Usage
@@ -156,9 +148,6 @@ Each interaction triggers a flow through the system layers, simulating real-worl
     <img src="https://github.com/MattheusMorais/word-processing-service/blob/main/images/usage.png?raw=true" alt="Logo" width="50%" height="50%">
 </div>
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 <!-- ROADMAP -->
 ## 🚧 Roadmap
 
@@ -166,18 +155,10 @@ Each interaction triggers a flow through the system layers, simulating real-worl
 - [ ] Replace DAO with Spring Data JPA
 - [ ] Implement REST API endpoints
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
 <!-- LICENSE -->
 ## 📄 License
 
 Distributed under the MIT License. See `LICENSE.txt` for more information.
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
 
 <!-- CONTACT -->
 ## 🤝 Contact

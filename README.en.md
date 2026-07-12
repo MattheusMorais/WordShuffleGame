@@ -122,12 +122,25 @@ The tests ensure correct behavior and proper exception handling for invalid inpu
 
 ### ⚙️ Running the Project
 
-💡 Run the following **bold** commands in your terminal in sequence(you can copy and paste them).
+Clone the project
+```bash
+git clone https://github.com/MattheusMorais/word-processing-service.git
+```
 
-1. Open a terminal and paste: **git clone https://github.com/MattheusMorais/word-processing-service.git**
-2. Navigate to the project folder: **cd word-processing-service**
-3. Start container database: **docker compose up -d db**
-4. Run the application: **docker compose run --rm app**
+Enter the folder
+```bash
+cd word-processing-service
+```
+
+Start database
+```bash
+docker compose up -d db
+```
+
+Start application
+```bash
+docker compose run --rm app
+```
 
 <!-- USAGE EXAMPLES -->
 ## 💻 Usage
@@ -163,9 +176,17 @@ Distributed under the MIT License. See `LICENSE.txt` for more information.
 <!-- CONTACT -->
 ## 🤝 Contact
 
-Matheus Morais - https://www.linkedin.com/in/mattheus-morais/ - moraism.dev@gmail.com
+LinkedIn:
+https://www.linkedin.com/in/mattheus-morais/
 
-Project Link: https://github.com/MattheusMorais/word-processing-service
+Email:
+moraism.dev@gmail.com
+
+Project:
+https://github.com/MattheusMorais/word-processing-service
+
+Site:
+https://matheus-morais.vercel.app
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
